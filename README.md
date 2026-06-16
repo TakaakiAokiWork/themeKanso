@@ -8,10 +8,7 @@ for an uncluttered look.
 
 ```r
 # from GitHub
-remotes::install_github("<user>/themeKanso")
-
-# from a local source tree
-remotes::install_local("themeKanso")
+remotes::install_github("TakaakiAokiWork/themeKanso")
 ```
 
 ## Usage
