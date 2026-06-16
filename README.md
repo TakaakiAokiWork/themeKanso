@@ -63,9 +63,8 @@ For scale bars or north arrows, add `ggspatial::annotation_scale()` /
 The gallery uses standard datasets (`iris`, `diamonds`, `txhousing`,
 `faithfuld`, `mpg`, plus the `nc` shapefile bundled with [sf](https://r-spatial.github.io/sf/)),
 the AAAS palette from [ggsci](https://nanx.me/ggsci/) for discrete scales, and
-viridis for the continuous ones. The map uses `theme_kanso_map()`, a variant of
-`theme_kanso()` for `geom_sf()` plots that drops the lat/long axes and
-graticule. Regenerate with:
+viridis for the continuous ones. The map uses `theme_kanso_map()` (see above).
+Regenerate with:
 
 ```r
 Rscript data-raw/make_readme_figures.R   # requires ggsci, patchwork, sf
@@ -74,8 +73,8 @@ Rscript data-raw/make_readme_figures.R   # requires ggsci, patchwork, sf
 ### Multi-panel layout
 
 Three panels side by side at A4 text width (16 cm) with
-[patchwork](https://patchwork.data-imaginist.com/). Panel tags from
-`plot_annotation(tag_levels = "A")` are rendered bold and top-left by the theme.
+[patchwork](https://patchwork.data-imaginist.com/). The theme renders panel tags
+from `plot_annotation(tag_levels = "A")` bold and top-left.
 
 ![Patchwork row](man/figures/patchwork_row.png)
 
