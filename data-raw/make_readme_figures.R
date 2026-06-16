@@ -6,6 +6,7 @@
 suppressPackageStartupMessages(library(tidyverse))
 library(ggsci)
 library(patchwork)
+library(sf)
 library(themeKanso)
 
 dir.create("man/figures", showWarnings = FALSE, recursive = TRUE)
@@ -78,6 +79,15 @@ p_facet <- ggplot(mpg, aes(displ, hwy, colour = drv)) +
   theme_kanso()
 save_fig("facet.png", p_facet)
 
+# Map（sf 同梱の North Carolina、連続 fill は viridis）
+nc <- st_read(system.file("shape/nc.shp", package = "sf"), quiet = TRUE)
+p_map <- ggplot(nc) +
+  geom_sf(aes(fill = SID74), colour = "white", linewidth = 0.1) +
+  scale_fill_viridis_c(option = "viridis") +
+  labs(title = "Map", fill = "SID 74") +
+  theme_kanso_map()
+save_fig("map.png", p_map)
+
 # patchwork で3図を横並び（A4 本文幅 ≈ 16cm 想定）
 # plot_annotation(tag_levels = "A") でパネルラベルが付き、theme_kanso() で太字・左上になる。
 row <- (p_scatter + p_box + p_line) +
@@ -87,4 +97,4 @@ row <- (p_scatter + p_box + p_line) +
 ggsave("man/figures/patchwork_row.png", row,
        width = 16, height = 5.5, units = "cm", dpi = 150)
 
-cat("man/figures/ に8枚の画像を出力しました\n")
+cat("man/figures/ に9枚の画像を出力しました\n")

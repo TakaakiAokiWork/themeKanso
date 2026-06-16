@@ -36,14 +36,17 @@ theme_kanso(base_size = 14, base_family = "")
 | ![Scatter](man/figures/scatter.png) | ![Histogram](man/figures/histogram.png) |
 | ![Line](man/figures/line.png) | ![Heatmap](man/figures/heatmap.png) |
 | ![Bar](man/figures/bar.png) | ![Boxplot](man/figures/boxplot.png) |
-| ![Facet](man/figures/facet.png) | |
+| ![Facet](man/figures/facet.png) | ![Map](man/figures/map.png) |
 
 The gallery uses standard datasets (`iris`, `diamonds`, `txhousing`,
-`faithfuld`, `mpg`), the AAAS palette from [ggsci](https://nanx.me/ggsci/) for
-discrete scales, and viridis for the continuous one. Regenerate with:
+`faithfuld`, `mpg`, plus the `nc` shapefile bundled with [sf](https://r-spatial.github.io/sf/)),
+the AAAS palette from [ggsci](https://nanx.me/ggsci/) for discrete scales, and
+viridis for the continuous ones. The map uses `theme_kanso_map()`, a variant of
+`theme_kanso()` for `geom_sf()` plots that drops the lat/long axes and
+graticule. Regenerate with:
 
 ```r
-Rscript data-raw/make_readme_figures.R   # requires ggsci, patchwork
+Rscript data-raw/make_readme_figures.R   # requires ggsci, patchwork, sf
 ```
 
 ### Multi-panel layout
