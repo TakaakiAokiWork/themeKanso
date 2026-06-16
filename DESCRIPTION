@@ -1,0 +1,13 @@
+Package: themeKanso
+Title: A Simple ggplot2 Theme
+Version: 0.1.0
+Authors@R:
+    person("Takaaki", "Aoki", , "takaaki-aoki@biwako.shiga-u.ac.jp", role = c("aut", "cre"))
+Description: Provides theme_kanso(), a minimal and clean ggplot2 theme built
+    on top of theme_minimal(). "Kanso" (簡素) means simplicity.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports:
+    ggplot2
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 8.0.0
