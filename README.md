@@ -29,6 +29,28 @@ ggplot(mtcars, aes(wt, mpg, colour = factor(cyl))) +
 theme_kanso(base_size = 14, base_family = "")
 ```
 
+### Maps
+
+`theme_kanso_map()` is a variant for `geom_sf()` maps. It inherits the bold
+titles, compact legend, and bold strips of `theme_kanso()`, but removes the
+latitude/longitude axes, ticks, and graticule and uses a plain white
+background. It takes the same `base_size` and `base_family` arguments.
+
+```r
+library(sf)
+
+nc <- st_read(system.file("shape/nc.shp", package = "sf"))
+
+ggplot(nc) +
+  geom_sf(aes(fill = AREA), colour = "white", linewidth = 0.1) +
+  scale_fill_viridis_c() +
+  labs(title = "North Carolina", fill = "Area") +
+  theme_kanso_map()
+```
+
+For scale bars or north arrows, add `ggspatial::annotation_scale()` /
+`ggspatial::annotation_north_arrow()` on top.
+
 ## Gallery
 
 | | |
